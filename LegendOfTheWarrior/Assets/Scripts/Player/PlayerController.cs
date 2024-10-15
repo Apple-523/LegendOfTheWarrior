@@ -72,5 +72,4 @@ public class PlayerController : MonoBehaviour
             transform.localScale = new Vector3(scaleX, transform.localScale.y, transform.localScale.z);
         }
     }
-
 }
