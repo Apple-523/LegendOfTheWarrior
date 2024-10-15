@@ -5,12 +5,14 @@ using UnityEngine;
 
 public class PhyciseCheck : MonoBehaviour
 {
+    [Header("检测参数")]
     /// <summary>
     /// 检测地面的半径
     /// </summary>
     public float checkRadius = 0.2f;
     public Vector2 bottomOffset;
     public LayerMask groundLayer;
+    [Header("状态")]
     /// <summary>
     /// 是否在地面
     /// </summary>
