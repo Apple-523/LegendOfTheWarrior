@@ -13,6 +13,12 @@ public class PlayerController : MonoBehaviour
     public float speed = 260;
     public float jumpForce = 16;
     private Rigidbody2D rigidbody2d;
+    [Header("受伤参数")]
+    public bool isHurt;
+    public float hurtForce;
+
+    public bool isDead;
+
     /// <summary>
     /// Awake is called when the script instance is being loaded.
     /// </summary>
@@ -52,8 +58,12 @@ public class PlayerController : MonoBehaviour
     }
     private void FixedUpdate()
     {
-        // 固定时钟频率
-        Move();
+        if (!isHurt && !isDead)
+        {
+            // 固定时钟频率
+            Move();
+        }
+
     }
 
     private void Move()
@@ -71,5 +81,25 @@ public class PlayerController : MonoBehaviour
         {
             transform.localScale = new Vector3(scaleX, transform.localScale.y, transform.localScale.z);
         }
+    }
+
+    public void GetHurt(Transform attacker)
+    {
+        isHurt = true;
+        // 受伤时，速度停下
+        rigidbody2d.velocity = Vector2.zero;
+        // 判断左方还是右方，并归一化
+        Vector2 direction = new Vector2(transform.position.x - attacker.position.x, 0).normalized;
+        rigidbody2d.AddForce(direction * hurtForce, ForceMode2D.Impulse);
+    }
+
+    public void GetDeath()
+    {
+        if (!isDead)
+        {
+            isDead = true;
+            inputControl.GamePlay.Disable();
+        }
+
     }
 }
