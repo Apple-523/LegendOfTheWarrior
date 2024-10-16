@@ -29,8 +29,12 @@ public class Enemy : MonoBehaviour
     private string kAnimWalk = "Walk";
     private string kAnimHurt = "Hurt";
 
+    private string kAnimIsDead = "isDead";
+
     [Header("状态")]
     public bool isHurt;
+
+    public bool isDead;
 
     private void Awake()
     {
@@ -57,7 +61,7 @@ public class Enemy : MonoBehaviour
 
     private void FixedUpdate()
     {
-        if (!isHurt)
+        if (!isHurt && !isDead)
         {
             Move();
         }
@@ -106,4 +110,10 @@ public class Enemy : MonoBehaviour
         rigidbody2d.AddForce(dir * hurtForce, ForceMode2D.Impulse);
 
     }
-}
+
+    public void OnTakeDeath() {
+        isDead = true;
+        animator.SetBool(kAnimIsDead, true);
+        animator.SetTrigger("DeadTrig");
+    }
+ }

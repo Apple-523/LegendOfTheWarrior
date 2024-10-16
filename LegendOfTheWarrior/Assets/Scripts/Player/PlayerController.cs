@@ -108,7 +108,6 @@ public class PlayerController : MonoBehaviour
     {
         // 获取到input的数值
         Vector2 inputDirection = inputControl.GamePlay.Move.ReadValue<Vector2>();
-        Debug.Log(inputDirection);
         rigidbody2d.velocity = new Vector2(inputDirection.x * speed * Time.deltaTime, rigidbody2d.velocity.y);
         // 人物翻转
         float scaleX = Mathf.Abs(transform.localScale.x);

@@ -820,63 +820,6 @@ Tilemap:
     e31: 0
     e32: 0
     e33: 1
---- !u!1001 &892507839
-PrefabInstance:
-  m_ObjectHideFlags: 0
-  serializedVersion: 2
-  m_Modification:
-    serializedVersion: 3
-    m_TransformParent: {fileID: 0}
-    m_Modifications:
-    - target: {fileID: 4397974404064401961, guid: aba0d60e15a244b3b9e8e19fe971c33b, type: 3}
-      propertyPath: m_LocalPosition.x
-      value: 3
-      objectReference: {fileID: 0}
-    - target: {fileID: 4397974404064401961, guid: aba0d60e15a244b3b9e8e19fe971c33b, type: 3}
-      propertyPath: m_LocalPosition.y
-      value: -2
-      objectReference: {fileID: 0}
-    - target: {fileID: 4397974404064401961, guid: aba0d60e15a244b3b9e8e19fe971c33b, type: 3}
-      propertyPath: m_LocalPosition.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 4397974404064401961, guid: aba0d60e15a244b3b9e8e19fe971c33b, type: 3}
-      propertyPath: m_LocalRotation.w
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 4397974404064401961, guid: aba0d60e15a244b3b9e8e19fe971c33b, type: 3}
-      propertyPath: m_LocalRotation.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 4397974404064401961, guid: aba0d60e15a244b3b9e8e19fe971c33b, type: 3}
-      propertyPath: m_LocalRotation.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 4397974404064401961, guid: aba0d60e15a244b3b9e8e19fe971c33b, type: 3}
-      propertyPath: m_LocalRotation.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 4397974404064401961, guid: aba0d60e15a244b3b9e8e19fe971c33b, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 4397974404064401961, guid: aba0d60e15a244b3b9e8e19fe971c33b, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 4397974404064401961, guid: aba0d60e15a244b3b9e8e19fe971c33b, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 4408230039357587754, guid: aba0d60e15a244b3b9e8e19fe971c33b, type: 3}
-      propertyPath: m_Name
-      value: BrownBoar
-      objectReference: {fileID: 0}
-    m_RemovedComponents: []
-    m_RemovedGameObjects: []
-    m_AddedGameObjects: []
-    m_AddedComponents: []
-  m_SourcePrefab: {fileID: 100100000, guid: aba0d60e15a244b3b9e8e19fe971c33b, type: 3}
 --- !u!1 &904666848
 GameObject:
   m_ObjectHideFlags: 0
@@ -1117,6 +1060,63 @@ Tilemap:
     e31: 0
     e32: 0
     e33: 1
+--- !u!1001 &1364089824
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    serializedVersion: 3
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 4397974404064401961, guid: aba0d60e15a244b3b9e8e19fe971c33b, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 4397974404064401961, guid: aba0d60e15a244b3b9e8e19fe971c33b, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: -2
+      objectReference: {fileID: 0}
+    - target: {fileID: 4397974404064401961, guid: aba0d60e15a244b3b9e8e19fe971c33b, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4397974404064401961, guid: aba0d60e15a244b3b9e8e19fe971c33b, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4397974404064401961, guid: aba0d60e15a244b3b9e8e19fe971c33b, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4397974404064401961, guid: aba0d60e15a244b3b9e8e19fe971c33b, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4397974404064401961, guid: aba0d60e15a244b3b9e8e19fe971c33b, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4397974404064401961, guid: aba0d60e15a244b3b9e8e19fe971c33b, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4397974404064401961, guid: aba0d60e15a244b3b9e8e19fe971c33b, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4397974404064401961, guid: aba0d60e15a244b3b9e8e19fe971c33b, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4408230039357587754, guid: aba0d60e15a244b3b9e8e19fe971c33b, type: 3}
+      propertyPath: m_Name
+      value: BrownBoar
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: aba0d60e15a244b3b9e8e19fe971c33b, type: 3}
 --- !u!1 &1417667339
 GameObject:
   m_ObjectHideFlags: 0
@@ -1291,15 +1291,15 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3550874926742673671, guid: 38b4b29b5b6d14b318df311bf5ae604e, type: 3}
       propertyPath: m_IsActive
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 5649825413256861323, guid: 38b4b29b5b6d14b318df311bf5ae604e, type: 3}
       propertyPath: m_IsActive
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 8133587901931228717, guid: 38b4b29b5b6d14b318df311bf5ae604e, type: 3}
       propertyPath: m_IsActive
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -3454,4 +3454,4 @@ SceneRoots:
   - {fileID: 519420032}
   - {fileID: 332875032}
   - {fileID: 1541461333}
-  - {fileID: 892507839}
+  - {fileID: 1364089824}
