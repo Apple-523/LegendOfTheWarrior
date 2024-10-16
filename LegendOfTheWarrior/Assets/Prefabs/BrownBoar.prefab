@@ -131,7 +131,7 @@ CapsuleCollider2D:
   m_Material: {fileID: 0}
   m_IncludeLayers:
     serializedVersion: 2
-    m_Bits: 0
+    m_Bits: 128
   m_ExcludeLayers:
     serializedVersion: 2
     m_Bits: 256
@@ -252,6 +252,8 @@ MonoBehaviour:
   chaseSpeed: 260
   currentSpeed: 0
   faceDirector: {x: 0, y: 0, z: 0}
+  attacker: {fileID: 0}
+  touchWallWaitTime: 2
 --- !u!95 &889174005487492509
 Animator:
   serializedVersion: 5

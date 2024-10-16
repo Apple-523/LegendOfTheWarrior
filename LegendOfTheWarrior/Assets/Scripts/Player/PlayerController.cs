@@ -76,6 +76,10 @@ public class PlayerController : MonoBehaviour
 
     private void onReceiveGameAttack(InputAction.CallbackContext context)
     {
+        if (!phycisCheck.isOnGround)
+        {
+            return;
+        }
         isAttack = true;
         playerAnimation.AnimAttack();
         attackCombo++;
