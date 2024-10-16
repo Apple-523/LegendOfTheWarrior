@@ -211,13 +211,25 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5b35d9626e9254f50aace38889b001c3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  maxHealth: 0
+  maxHealth: 30
   currentHealth: 0
   kInvulnerableDuration: 1
   isInvulnerable: 0
   OnTakeDamage:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 7257238105299960730}
+        m_TargetAssemblyTypeName: Enemy, Assembly-CSharp
+        m_MethodName: OnTakeDamage
+        m_Mode: 0
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
   onEventDead:
     m_PersistentCalls:
       m_Calls: []
@@ -252,8 +264,10 @@ MonoBehaviour:
   chaseSpeed: 260
   currentSpeed: 0
   faceDirector: {x: 0, y: 0, z: 0}
+  hurtForce: 20
   attacker: {fileID: 0}
   touchWallWaitTime: 2
+  isHurt: 0
 --- !u!95 &889174005487492509
 Animator:
   serializedVersion: 5

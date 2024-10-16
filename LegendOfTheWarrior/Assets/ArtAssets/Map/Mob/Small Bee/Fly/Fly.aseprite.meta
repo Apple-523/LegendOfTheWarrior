@@ -212,7 +212,6 @@ ScriptedImporter:
     cells:
     - name: Fly_Frame_0
       frameIndex: 0
-      additiveSortOrder: 0
       cellRect:
         x: 21
         y: 19
@@ -221,7 +220,6 @@ ScriptedImporter:
       spriteId: 61cf8e50afa2f41a8a104ed36cc33990
     - name: Fly_Frame_1
       frameIndex: 1
-      additiveSortOrder: 0
       cellRect:
         x: 21
         y: 20
@@ -230,7 +228,6 @@ ScriptedImporter:
       spriteId: 5133bcc62a50943c49c609708e469ee5
     - name: Fly_Frame_2
       frameIndex: 2
-      additiveSortOrder: 0
       cellRect:
         x: 20
         y: 20
@@ -239,7 +236,6 @@ ScriptedImporter:
       spriteId: ae5a183ac1dce4ed391e578b43f7d78a
     - name: Fly_Frame_3
       frameIndex: 3
-      additiveSortOrder: 0
       cellRect:
         x: 21
         y: 20

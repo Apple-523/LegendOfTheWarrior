@@ -19,7 +19,7 @@ public class Character : MonoBehaviour
     private void Start()
     {
         currentHealth = maxHealth;
-        Debug.Log(name+"刚开始当前血量为"+currentHealth);
+        // Debug.Log(name+"刚开始当前血量为"+currentHealth);
     }
 
     private void Update()
@@ -44,8 +44,8 @@ public class Character : MonoBehaviour
         {
             return;
         }
-        Debug.Log("是谁伤害"+other.name);
-        Debug.Log("受伤前当前血量为"+currentHealth);
+        // Debug.Log("是谁伤害"+other.name);
+        // Debug.Log("受伤前当前血量为"+currentHealth);
         currentHealth -= other.damage;
 
         if (currentHealth <= 0)
@@ -58,7 +58,7 @@ public class Character : MonoBehaviour
         {
             // 受伤后有短暂的无敌状态
             TriggerInvulnerable();
-            Debug.Log(name+"受伤当前血量为"+currentHealth);
+            // Debug.Log(name+"受伤当前血量为"+currentHealth);
             OnTakeDamage?.Invoke(other.transform);
         }
 

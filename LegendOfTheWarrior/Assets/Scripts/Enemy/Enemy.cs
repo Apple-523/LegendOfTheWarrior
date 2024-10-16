@@ -18,6 +18,7 @@ public class Enemy : MonoBehaviour
 
     public Vector3 faceDirector;
 
+    public float hurtForce;
 
     public Transform attacker;
     [Header("计时器")]
@@ -26,6 +27,10 @@ public class Enemy : MonoBehaviour
     private bool isWaiting;
 
     private string kAnimWalk = "Walk";
+    private string kAnimHurt = "Hurt";
+
+    [Header("状态")]
+    public bool isHurt;
 
     private void Awake()
     {
@@ -34,6 +39,7 @@ public class Enemy : MonoBehaviour
         phyciseCheck = GetComponent<PhyciseCheck>();
         currentSpeed = normalSpeed;
         currentTouchWallWaitTime = touchWallWaitTime;
+
     }
 
     private void Update()
@@ -44,14 +50,18 @@ public class Enemy : MonoBehaviour
         phyciseCheck.isTouchRightWall && faceDirector.x > 0)
         {
             isWaiting = true;
-            animator.SetBool(kAnimWalk,false);
+            animator.SetBool(kAnimWalk, false);
         }
         WallTouchWaitingTimeCounter();
     }
 
     private void FixedUpdate()
     {
-        Move();
+        if (!isHurt)
+        {
+            Move();
+        }
+
     }
 
     public virtual void Move()
@@ -67,7 +77,7 @@ public class Enemy : MonoBehaviour
             if (currentTouchWallWaitTime <= 0)
             {
                 isWaiting = false;
-                animator.SetBool(kAnimWalk,true);
+                animator.SetBool(kAnimWalk, true);
                 currentTouchWallWaitTime = touchWallWaitTime;
                 // 到时间了转身
                 transform.localScale = new Vector3(-transform.localScale.x, transform.localScale.y, transform.localScale.z);
@@ -76,11 +86,24 @@ public class Enemy : MonoBehaviour
         }
     }
 
-    public void OnTakeDamage(Transform attackTransform) {
+    public void OnTakeDamage(Transform attackTransform)
+    {
         attacker = attackTransform;
         // 转身
-        if (attackTransform.position.x - transform.position.x > 0) {
-            transform.localScale = new Vector3(-1,0,0);
+        Debug.Log("转身");
+        if (attackTransform.position.x - transform.position.x > 0)
+        {
+            transform.localScale = new Vector3(-1, 1, 1);
         }
+        if (attackTransform.position.x - transform.position.x < 0)
+        {
+            transform.localScale = new Vector3(1, 1, 1);
+        }
+        // 受伤被击退
+        isHurt = true;
+        animator.SetTrigger(kAnimHurt);
+        Vector2 dir = new Vector2(transform.position.x - attackTransform.position.x, 0).normalized;
+        rigidbody2d.AddForce(dir * hurtForce, ForceMode2D.Impulse);
+
     }
 }
