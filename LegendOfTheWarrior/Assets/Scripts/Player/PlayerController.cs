@@ -7,6 +7,7 @@ using UnityEngine.InputSystem;
 public class PlayerController : MonoBehaviour
 {
     public PlayerInputSystem inputControl;
+    private PlayerAnimation playerAnimation;
     public Vector2 inputDirection;
     private PhyciseCheck phycisCheck;
     [Header("基本参数")]
@@ -18,7 +19,10 @@ public class PlayerController : MonoBehaviour
     public float hurtForce;
 
     public bool isDead;
+    public bool isAttack;
+    public int attackCombo;
 
+    #region 生命周期
     /// <summary>
     /// Awake is called when the script instance is being loaded.
     /// </summary>
@@ -27,6 +31,8 @@ public class PlayerController : MonoBehaviour
         inputControl = new PlayerInputSystem();
         rigidbody2d = GetComponent<Rigidbody2D>();
         phycisCheck = GetComponent<PhyciseCheck>();
+        playerAnimation = GetComponent<PlayerAnimation>();
+        attackCombo = 0;
 
     }
     private void OnEnable()
@@ -34,12 +40,20 @@ public class PlayerController : MonoBehaviour
         inputControl.Enable();
         // 监听按下按键跳跃
         inputControl.GamePlay.Jump.started += onReceiveGamePlayJump;
+        // 监听按下统计
+        inputControl.GamePlay.Attack.started += onReceiveGameAttack;
     }
+
+
     private void OnDisable()
     {
         inputControl.Disable();
         inputControl.GamePlay.Jump.started -= onReceiveGamePlayJump;
+        inputControl.GamePlay.Attack.started -= onReceiveGameAttack;
     }
+
+    #endregion
+
 
     private void onReceiveGamePlayJump(InputAction.CallbackContext context)
     {
@@ -51,6 +65,18 @@ public class PlayerController : MonoBehaviour
 
     }
 
+    private void onReceiveGameAttack(InputAction.CallbackContext context)
+    {
+        Debug.Log("onReceiveGameAttack");
+        isAttack = true;
+        playerAnimation.AnimAttack();
+        attackCombo++;
+        if (attackCombo >= 3) {
+            attackCombo = attackCombo % 3 + 1;
+        }
+        Debug.Log("attackCombo = "+attackCombo);
+    }
+
     private void Update()
     {
 
@@ -58,7 +84,7 @@ public class PlayerController : MonoBehaviour
     }
     private void FixedUpdate()
     {
-        if (!isHurt && !isDead)
+        if (!isHurt && !isDead && !isAttack)
         {
             // 固定时钟频率
             Move();
@@ -82,6 +108,8 @@ public class PlayerController : MonoBehaviour
             transform.localScale = new Vector3(scaleX, transform.localScale.y, transform.localScale.z);
         }
     }
+
+
 
     public void GetHurt(Transform attacker)
     {
