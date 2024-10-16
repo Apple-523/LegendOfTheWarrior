@@ -913,7 +913,7 @@ AnimatorStateTransition:
     m_EventTreshold: 0
   - m_ConditionMode: 3
     m_ConditionEvent: attackCombo
-    m_EventTreshold: 0
+    m_EventTreshold: 1
   m_DstStateMachine: {fileID: 0}
   m_DstState: {fileID: -3285642314265736230}
   m_Solo: 0
@@ -954,9 +954,6 @@ AnimatorStateTransition:
   - m_ConditionMode: 1
     m_ConditionEvent: AttackTrig
     m_EventTreshold: 0
-  - m_ConditionMode: 3
-    m_ConditionEvent: attackCombo
-    m_EventTreshold: 1
   m_DstStateMachine: {fileID: 0}
   m_DstState: {fileID: 5395211116219413713}
   m_Solo: 0

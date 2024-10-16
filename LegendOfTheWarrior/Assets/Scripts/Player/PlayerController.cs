@@ -10,10 +10,16 @@ public class PlayerController : MonoBehaviour
     private PlayerAnimation playerAnimation;
     public Vector2 inputDirection;
     private PhyciseCheck phycisCheck;
+
+    public PhysicsMaterial2D normal;
+    public PhysicsMaterial2D wall;
+
+
     [Header("基本参数")]
     public float speed = 260;
     public float jumpForce = 16;
     private Rigidbody2D rigidbody2d;
+    private CapsuleCollider2D capsuleCollider2D;
     [Header("受伤参数")]
     public bool isHurt;
     public float hurtForce;
@@ -21,6 +27,8 @@ public class PlayerController : MonoBehaviour
     public bool isDead;
     public bool isAttack;
     public int attackCombo;
+
+
 
     #region 生命周期
     /// <summary>
@@ -32,6 +40,7 @@ public class PlayerController : MonoBehaviour
         rigidbody2d = GetComponent<Rigidbody2D>();
         phycisCheck = GetComponent<PhyciseCheck>();
         playerAnimation = GetComponent<PlayerAnimation>();
+        capsuleCollider2D = GetComponent<CapsuleCollider2D>();
         attackCombo = 0;
 
     }
@@ -67,21 +76,20 @@ public class PlayerController : MonoBehaviour
 
     private void onReceiveGameAttack(InputAction.CallbackContext context)
     {
-        Debug.Log("onReceiveGameAttack");
         isAttack = true;
         playerAnimation.AnimAttack();
         attackCombo++;
-        if (attackCombo >= 3) {
+        if (attackCombo >= 3)
+        {
             attackCombo = attackCombo % 3 + 1;
         }
-        Debug.Log("attackCombo = "+attackCombo);
     }
 
     private void Update()
     {
-
-
+        CheckState();
     }
+
     private void FixedUpdate()
     {
         if (!isHurt && !isDead && !isAttack)
@@ -129,5 +137,22 @@ public class PlayerController : MonoBehaviour
             inputControl.GamePlay.Disable();
         }
 
+    }
+
+    private void CheckState()
+    {
+        if (phycisCheck.isOnGround)
+        {
+            if (capsuleCollider2D.sharedMaterial != normal)
+                capsuleCollider2D.sharedMaterial = normal;
+        }
+        else
+        {
+            if (capsuleCollider2D.sharedMaterial != wall)
+            {
+                capsuleCollider2D.sharedMaterial = wall;
+            }
+
+        }
     }
 }

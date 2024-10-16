@@ -12,7 +12,9 @@ public class Attack : MonoBehaviour
 
     private void OnTriggerStay2D(Collider2D other)
     {
-        //TODO: 判断other是否为player
+        Debug.Log(name+"进行攻击");
         other.GetComponent<Character>()?.TakeDamage(this);
+
+
     }
 }

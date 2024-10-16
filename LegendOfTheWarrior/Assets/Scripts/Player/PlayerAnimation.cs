@@ -48,7 +48,6 @@ public class PlayerAnimation : MonoBehaviour
 
     public void AnimAttack()
     {
-        Debug.Log("AnimAttack");
         animator.SetTrigger(kAnimAttackTrig);
     }
 }

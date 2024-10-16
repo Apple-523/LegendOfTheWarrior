@@ -167,7 +167,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   inputDirection: {x: 0, y: 0}
-  speed: 260
+  normal: {fileID: 6200000, guid: cb0325715e36e4e38a99cf355d6d14c8, type: 2}
+  wall: {fileID: 6200000, guid: d73f2f0cd857246cea53469887e0c409, type: 2}
+  speed: 290
   jumpForce: 16.5
   isHurt: 0
   hurtForce: 1
@@ -186,12 +188,17 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7dcc6d46fbb7a401ab0f244bed6685ce, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  checkRadius: 0.11
+  checkRadius: 0.1
+  needAutoCheck: 1
   bottomOffset: {x: -0.05, y: 0}
+  leftOffset: {x: -0.39, y: 0.73}
+  rightOffset: {x: 0.33, y: 0.74}
   groundLayer:
     serializedVersion: 2
     m_Bits: 64
   isOnGround: 0
+  isTouchLeftWall: 0
+  isTouchRightWall: 0
 --- !u!95 &9105477309896109253
 Animator:
   serializedVersion: 5
@@ -341,7 +348,7 @@ PolygonCollider2D:
     m_Bits: 4294967295
   m_ContactCaptureLayers:
     serializedVersion: 2
-    m_Bits: 4294967295
+    m_Bits: 256
   m_CallbackLayers:
     serializedVersion: 2
     m_Bits: 4294967295
@@ -442,7 +449,7 @@ PolygonCollider2D:
     m_Bits: 4294967295
   m_ContactCaptureLayers:
     serializedVersion: 2
-    m_Bits: 4294967295
+    m_Bits: 256
   m_CallbackLayers:
     serializedVersion: 2
     m_Bits: 4294967295
@@ -541,7 +548,7 @@ PolygonCollider2D:
     m_Bits: 4294967295
   m_ContactCaptureLayers:
     serializedVersion: 2
-    m_Bits: 4294967295
+    m_Bits: 256
   m_CallbackLayers:
     serializedVersion: 2
     m_Bits: 4294967295
