@@ -4,10 +4,10 @@ using UnityEngine;
 
 public class Enemy : MonoBehaviour
 {
-    protected Rigidbody2D rigidbody2d;
-    protected Animator animator;
+    [HideInInspector] public Rigidbody2D rigidbody2d;
+    [HideInInspector] public Animator animator;
 
-    PhyciseCheck phyciseCheck;
+    [HideInInspector] public PhyciseCheck phyciseCheck;
 
 
     [Header("基本参数")]
@@ -24,19 +24,36 @@ public class Enemy : MonoBehaviour
     [Header("计时器")]
     public float touchWallWaitTime = 2;
     private float currentTouchWallWaitTime = 0;
-    private bool isWaiting;
+    public bool isWaiting;
 
-    private string kAnimWalk = "Walk";
-    private string kAnimHurt = "Hurt";
+    public string kAnimWalk = "Walk";
+    public string kAnimHurt = "Hurt";
 
-    private string kAnimIsDead = "isDead";
+    public string kAnimIsDead = "isDead";
 
     [Header("状态")]
     public bool isHurt;
 
     public bool isDead;
 
-    private void Awake()
+    /// <summary>
+    /// 巡逻状态
+    /// </summary>
+    protected BaseState walkAroundState;
+
+    /// <summary>
+    /// 追击状态
+    /// </summary>
+    protected BaseState chaseState;
+    private BaseState currentState;
+
+    [Header("玩家检测")]
+    public Vector2 centerOffect;
+    public Vector2 checkBoxSize;
+    public float checkDistance;
+    public LayerMask checkPlayerLayerMask;
+
+    protected virtual void Awake()
     {
         rigidbody2d = GetComponent<Rigidbody2D>();
         animator = GetComponent<Animator>();
@@ -46,26 +63,31 @@ public class Enemy : MonoBehaviour
 
     }
 
+    private void OnEnable()
+    {
+        currentState = walkAroundState;
+        currentState.OnEnter(this);
+    }
+
+    private void OnDisable()
+    {
+        currentState.OnExit();
+    }
     private void Update()
     {
         faceDirector = new Vector3(-transform.localScale.x, 0, 0);
 
-        if (phyciseCheck.isTouchLeftWall && faceDirector.x < 0 || // 撞左边墙时，脸要朝左侧
-        phyciseCheck.isTouchRightWall && faceDirector.x > 0)
-        {
-            isWaiting = true;
-            animator.SetBool(kAnimWalk, false);
-        }
+        currentState.LogicUpdate();
         WallTouchWaitingTimeCounter();
     }
 
     private void FixedUpdate()
     {
-        if (!isHurt && !isDead)
+        if (!isHurt && !isDead && !isWaiting)
         {
             Move();
         }
-
+        currentState.PhysicsUpdate();
     }
 
     public virtual void Move()
@@ -90,6 +112,29 @@ public class Enemy : MonoBehaviour
         }
     }
 
+    public bool FoundPlayer()
+    {
+        RaycastHit2D raycastHit2D = Physics2D.BoxCast(transform.position + (Vector3)centerOffect, checkBoxSize, 0, faceDirector,
+        checkDistance, checkPlayerLayerMask);
+        return raycastHit2D;
+    }
+
+    public void SwitchState(NPCState state)
+    {
+        var newState = state switch
+        {
+            NPCState.WalkAround => walkAroundState,
+            NPCState.Chase => chaseState,
+            _ => null
+        };
+        currentState.OnExit();
+        currentState = newState;
+        currentState.OnEnter(this);
+    }
+
+
+    #region 事件执行    
+
     public void OnTakeDamage(Transform attackTransform)
     {
         attacker = attackTransform;
@@ -111,9 +156,28 @@ public class Enemy : MonoBehaviour
 
     }
 
-    public void OnTakeDeath() {
+    public void OnTakeDeath()
+    {
+        gameObject.layer = 2;
         isDead = true;
         animator.SetBool(kAnimIsDead, true);
-        animator.SetTrigger("DeadTrig");
     }
- }
+
+    public void DestoryAfterAnimation()
+    {
+        Debug.Log("DestoryAfterAnimation");
+        Destroy(this.gameObject);
+    }
+    #endregion
+
+
+    /// <summary>
+    /// Callback to draw gizmos that are pickable and always drawn.
+    /// </summary>
+    void OnDrawGizmos()
+    {
+        Gizmos.DrawWireSphere((Vector3)centerOffect + transform.position, 0.2f);
+    }
+
+
+}

@@ -38,7 +38,6 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0, g: 0, b: 0, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -440,8 +439,8 @@ Tilemap:
   - first: {x: 1, y: -2, z: 0}
     second:
       serializedVersion: 2
-      m_TileIndex: 12
-      m_TileSpriteIndex: 18
+      m_TileIndex: 9
+      m_TileSpriteIndex: 15
       m_TileMatrixIndex: 0
       m_TileColorIndex: 0
       m_TileObjectToInstantiateIndex: 65535
@@ -450,8 +449,8 @@ Tilemap:
   - first: {x: 2, y: -2, z: 0}
     second:
       serializedVersion: 2
-      m_TileIndex: 12
-      m_TileSpriteIndex: 18
+      m_TileIndex: 8
+      m_TileSpriteIndex: 14
       m_TileMatrixIndex: 0
       m_TileColorIndex: 0
       m_TileObjectToInstantiateIndex: 65535
@@ -605,15 +604,15 @@ Tilemap:
     m_Data: {fileID: 0}
   - m_RefCount: 0
     m_Data: {fileID: 0}
-  - m_RefCount: 0
-    m_Data: {fileID: 0}
-  - m_RefCount: 2
+  - m_RefCount: 1
+    m_Data: {fileID: 11400000, guid: 86bcb6c25fffd48bc9dacbbf0dfb6356, type: 2}
+  - m_RefCount: 3
     m_Data: {fileID: 11400000, guid: 3b124d7559b2e4570becba30c5080555, type: 2}
   - m_RefCount: 4
     m_Data: {fileID: 11400000, guid: 6fb41f0f0664b496a8e2c6aa8e8c1dbc, type: 2}
   - m_RefCount: 4
     m_Data: {fileID: 11400000, guid: a2514b4e674fc4a5980d93fd5b6636e6, type: 2}
-  - m_RefCount: 13
+  - m_RefCount: 11
     m_Data: {fileID: 11400000, guid: b3e44cfc44f2446e993c5dd24ad8d609, type: 2}
   m_TileSpriteArray:
   - m_RefCount: 0
@@ -644,15 +643,15 @@ Tilemap:
     m_Data: {fileID: 0}
   - m_RefCount: 0
     m_Data: {fileID: 0}
-  - m_RefCount: 0
-    m_Data: {fileID: 0}
-  - m_RefCount: 2
+  - m_RefCount: 1
+    m_Data: {fileID: 1066617861, guid: 5921a8cb0ed4043fe8f03b68e8de64c2, type: 3}
+  - m_RefCount: 3
     m_Data: {fileID: 162983731, guid: 5921a8cb0ed4043fe8f03b68e8de64c2, type: 3}
   - m_RefCount: 4
     m_Data: {fileID: 590922215, guid: 5921a8cb0ed4043fe8f03b68e8de64c2, type: 3}
   - m_RefCount: 4
     m_Data: {fileID: 536371692, guid: 5921a8cb0ed4043fe8f03b68e8de64c2, type: 3}
-  - m_RefCount: 13
+  - m_RefCount: 11
     m_Data: {fileID: -35521876, guid: 5921a8cb0ed4043fe8f03b68e8de64c2, type: 3}
   m_TileMatrixArray:
   - m_RefCount: 23
@@ -1070,7 +1069,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 4397974404064401961, guid: aba0d60e15a244b3b9e8e19fe971c33b, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 3
+      value: -2.65
       objectReference: {fileID: 0}
     - target: {fileID: 4397974404064401961, guid: aba0d60e15a244b3b9e8e19fe971c33b, type: 3}
       propertyPath: m_LocalPosition.y
@@ -1247,7 +1246,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 1453618718982789493, guid: 38b4b29b5b6d14b318df311bf5ae604e, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 0
+      value: 3.32
       objectReference: {fileID: 0}
     - target: {fileID: 1453618718982789493, guid: 38b4b29b5b6d14b318df311bf5ae604e, type: 3}
       propertyPath: m_LocalPosition.y

@@ -42,7 +42,7 @@ public class PhyciseCheck : MonoBehaviour
     public void Check()
     {
         // - 检测是否在地面
-        isOnGround = Physics2D.OverlapCircle((Vector2)transform.position + bottomOffset, checkRadius, groundLayer);
+        isOnGround = Physics2D.OverlapCircle((Vector2)transform.position + bottomOffset * transform.localScale, checkRadius, groundLayer);
         // - 检测是否在地面
         isTouchLeftWall = Physics2D.OverlapCircle((Vector2)transform.position + leftOffset, checkRadius, groundLayer);
         // - 检测是否在地面
@@ -53,7 +53,7 @@ public class PhyciseCheck : MonoBehaviour
     /// </summary>
     void OnDrawGizmosSelected()
     {
-     Gizmos.DrawWireSphere((Vector2)transform.position + bottomOffset,checkRadius);   
+     Gizmos.DrawWireSphere((Vector2)transform.position + bottomOffset * transform.localScale,checkRadius);   
      Gizmos.DrawWireSphere((Vector2)transform.position + leftOffset,checkRadius);   
      Gizmos.DrawWireSphere((Vector2)transform.position + rightOffset,checkRadius);   
     }

@@ -372,6 +372,7 @@ ScriptedImporter:
     cells:
     - name: Sprite-0003_Frame_0
       frameIndex: 0
+      additiveSortOrder: 0
       cellRect:
         x: 16
         y: 0
@@ -380,6 +381,7 @@ ScriptedImporter:
       spriteId: 49338d2cd6d1748d0a14e2057d7dadc4
     - name: Sprite-0003_Frame_1
       frameIndex: 1
+      additiveSortOrder: 0
       cellRect:
         x: 16
         y: 0
@@ -388,6 +390,7 @@ ScriptedImporter:
       spriteId: 78fa69a96000c443a8f561abec9c3e8e
     - name: Sprite-0003_Frame_2
       frameIndex: 2
+      additiveSortOrder: 0
       cellRect:
         x: 15
         y: 2
@@ -396,6 +399,7 @@ ScriptedImporter:
       spriteId: dbc83bfd12dad4e7f800d801d0812d8c
     - name: Sprite-0003_Frame_3
       frameIndex: 3
+      additiveSortOrder: 0
       cellRect:
         x: 14
         y: 6
@@ -404,6 +408,7 @@ ScriptedImporter:
       spriteId: cb688de663cb8400eb7dd791a89ec737
     - name: Sprite-0003_Frame_4
       frameIndex: 4
+      additiveSortOrder: 0
       cellRect:
         x: 5
         y: 4
@@ -412,6 +417,7 @@ ScriptedImporter:
       spriteId: 731fa2043731f4290b17221ec230ba83
     - name: Sprite-0003_Frame_5
       frameIndex: 5
+      additiveSortOrder: 0
       cellRect:
         x: 7
         y: 5
@@ -420,6 +426,7 @@ ScriptedImporter:
       spriteId: d7c47e49df2ae4bddbd8ee72f8762cd5
     - name: Sprite-0003_Frame_6
       frameIndex: 6
+      additiveSortOrder: 0
       cellRect:
         x: 8
         y: 2
@@ -428,6 +435,7 @@ ScriptedImporter:
       spriteId: 882dea230c43149e181c0bce59ff25b1
     - name: Sprite-0003_Frame_7
       frameIndex: 7
+      additiveSortOrder: 0
       cellRect:
         x: 9
         y: 2
@@ -436,6 +444,7 @@ ScriptedImporter:
       spriteId: e90c00a29a2eb425a8d57239899acd1d
     - name: Sprite-0003_Frame_8
       frameIndex: 8
+      additiveSortOrder: 0
       cellRect:
         x: 8
         y: 5
@@ -444,6 +453,7 @@ ScriptedImporter:
       spriteId: ccfcba276ac804df3af62719936888ee
     - name: Sprite-0003_Frame_9
       frameIndex: 9
+      additiveSortOrder: 0
       cellRect:
         x: 9
         y: 6
@@ -452,6 +462,7 @@ ScriptedImporter:
       spriteId: 31f56b7d803a749aa9c40b6a13ee5646
     - name: Sprite-0003_Frame_10
       frameIndex: 10
+      additiveSortOrder: 0
       cellRect:
         x: 12
         y: 5
@@ -460,6 +471,7 @@ ScriptedImporter:
       spriteId: 39d3a9dc5139a4d7f9c1cbb91d667071
     - name: Sprite-0003_Frame_11
       frameIndex: 11
+      additiveSortOrder: 0
       cellRect:
         x: 11
         y: 5

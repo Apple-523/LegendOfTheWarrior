@@ -272,6 +272,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: cfd8700d6722245d1b98af3a88072708, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  rigidbody2d: {fileID: 0}
+  animator: {fileID: 0}
+  phyciseCheck: {fileID: 0}
   normalSpeed: 100
   chaseSpeed: 260
   currentSpeed: 0
@@ -279,8 +282,18 @@ MonoBehaviour:
   hurtForce: 4.5
   attacker: {fileID: 0}
   touchWallWaitTime: 2
+  isWaiting: 0
+  kAnimWalk: Walk
+  kAnimHurt: Hurt
+  kAnimIsDead: isDead
   isHurt: 0
   isDead: 0
+  centerOffect: {x: -0.72, y: 0.72}
+  checkBoxSize: {x: 1, y: 1}
+  checkDistance: 4.5
+  checkPlayerLayerMask:
+    serializedVersion: 2
+    m_Bits: 128
 --- !u!95 &889174005487492509
 Animator:
   serializedVersion: 5
@@ -316,7 +329,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   checkRadius: 0.1
   needAutoCheck: 1
-  bottomOffset: {x: 0, y: 0}
+  bottomOffset: {x: -0.97, y: 0}
   leftOffset: {x: -1.18, y: 0.63}
   rightOffset: {x: 0.72, y: 0.62}
   groundLayer:
